@@ -7,7 +7,7 @@ import { ProductGrid } from "@/components/common/ProductGrid";
 import { DataDisplay } from "@/components/common/DataDisplay";
 import { Footer } from "@/components/common/Footer";
 
-export default function Home() {
+export default function CSSFirstPage() {
   return (
     <>
       <Header />
@@ -19,4 +19,4 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+} 
