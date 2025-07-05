@@ -1,9 +1,11 @@
 "use client";
 
-import { Box, Button, Container, Typography } from "@mui/material";
-import type React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-export const Hero: React.FC = () => {
+export const Hero = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Box

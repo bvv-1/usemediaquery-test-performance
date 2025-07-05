@@ -1,16 +1,13 @@
 "use client";
 
 import { ExpandMore } from "@mui/icons-material";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Container,
-  Link,
-  Typography,
-} from "@mui/material";
-import type React from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
 interface FooterSection {
   title: string;
@@ -36,7 +33,7 @@ const footerData: FooterSection[] = [
   },
 ];
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <Box sx={{ bgcolor: "grey.900", color: "white", py: 6 }}>
       <Container maxWidth="lg">
@@ -49,13 +46,7 @@ export const Footer: React.FC = () => {
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {section.links.map((link) => (
-                  <Link
-                    key={link}
-                    href="#"
-                    color="inherit"
-                    underline="hover"
-                    sx={{ opacity: 0.8 }}
-                  >
+                  <Link key={link} href="#" color="inherit" underline="hover" sx={{ opacity: 0.8 }}>
                     {link}
                   </Link>
                 ))}
@@ -103,4 +94,4 @@ export const Footer: React.FC = () => {
       </Container>
     </Box>
   );
-}; 
+};

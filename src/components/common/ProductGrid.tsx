@@ -1,7 +1,11 @@
 "use client";
 
-import { Box, Button, Card, CardContent, Container, Typography } from "@mui/material";
-import type React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 interface Product {
   id: number;
@@ -56,7 +60,7 @@ const products: Product[] = [
   },
 ];
 
-export const ProductGrid: React.FC = () => {
+export const ProductGrid = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Typography variant="h3" component="h2" textAlign="center" gutterBottom>

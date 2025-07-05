@@ -1,20 +1,17 @@
 "use client";
 
-import {
-  Box,
-  Card,
-  CardContent,
-  Container,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
-import type React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Typography from "@mui/material/Typography";
 
 interface DataItem {
   id: number;
@@ -26,14 +23,28 @@ interface DataItem {
 }
 
 const data: DataItem[] = [
-  { id: 1, name: "Product A", category: "Electronics", price: "$299", status: "Active", sales: 156 },
+  {
+    id: 1,
+    name: "Product A",
+    category: "Electronics",
+    price: "$299",
+    status: "Active",
+    sales: 156,
+  },
   { id: 2, name: "Product B", category: "Clothing", price: "$89", status: "Active", sales: 234 },
   { id: 3, name: "Product C", category: "Books", price: "$19", status: "Inactive", sales: 78 },
-  { id: 4, name: "Product D", category: "Electronics", price: "$599", status: "Active", sales: 345 },
+  {
+    id: 4,
+    name: "Product D",
+    category: "Electronics",
+    price: "$599",
+    status: "Active",
+    sales: 345,
+  },
   { id: 5, name: "Product E", category: "Home", price: "$129", status: "Active", sales: 189 },
 ];
 
-export const DataDisplay: React.FC = () => {
+export const DataDisplay = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Typography variant="h3" component="h2" textAlign="center" gutterBottom>
@@ -113,4 +124,4 @@ export const DataDisplay: React.FC = () => {
       </Box>
     </Container>
   );
-}; 
+};

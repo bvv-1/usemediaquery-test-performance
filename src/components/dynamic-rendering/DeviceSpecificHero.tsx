@@ -1,21 +1,23 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import { headers } from "next/headers";
-import type React from "react";
 
 // Server Component - デバイス判定を行う
 async function getDeviceType() {
   const headersList = await headers();
   const userAgent = headersList.get("user-agent") || "";
-  
+
   // モバイルデバイスの簡単な判定
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-  
+
   return isMobile ? "mobile" : "desktop";
 }
 
-export const DeviceSpecificHero: React.FC = async () => {
+export const DeviceSpecificHero = async () => {
   const deviceType = await getDeviceType();
-  
+
   if (deviceType === "mobile") {
     // モバイル専用UI
     return (
@@ -40,7 +42,7 @@ export const DeviceSpecificHero: React.FC = async () => {
       </Container>
     );
   }
-  
+
   // デスクトップ専用UI
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
@@ -86,4 +88,4 @@ export const DeviceSpecificHero: React.FC = async () => {
       </Box>
     </Container>
   );
-}; 
+};

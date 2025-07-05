@@ -1,36 +1,15 @@
 "use client";
 
-import { Box, Button, Container, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useEffect, useState } from "react";
-import type React from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-export const MediaQueryHero: React.FC = () => {
+export const MediaQueryHero = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  
-  // ハイドレーションエラー対策
-  const [mounted, setMounted] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-  // サーバーサイドレンダリング時は共通のスケルトンを表示
-  if (!mounted) {
-    return (
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Box sx={{ textAlign: "center" }}>
-          <Typography variant="h3" component="h1" gutterBottom>
-            Loading...
-          </Typography>
-          <Typography variant="h6" color="text.secondary" paragraph>
-            デバイスタイプを検出中...
-          </Typography>
-        </Box>
-      </Container>
-    );
-  }
-  
+
   if (isDesktop) {
     // デスクトップ専用UI
     return (
@@ -78,7 +57,7 @@ export const MediaQueryHero: React.FC = () => {
       </Container>
     );
   }
-  
+
   // モバイル専用UI
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -101,4 +80,4 @@ export const MediaQueryHero: React.FC = () => {
       </Box>
     </Container>
   );
-}; 
+};

@@ -1,11 +1,11 @@
 "use client";
 
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
+import { DataDisplay } from "@/components/common/DataDisplay";
+import { Footer } from "@/components/common/Footer";
 import { Header } from "@/components/common/Header";
 import { Hero } from "@/components/common/Hero";
 import { ProductGrid } from "@/components/common/ProductGrid";
-import { DataDisplay } from "@/components/common/DataDisplay";
-import { Footer } from "@/components/common/Footer";
 
 export default function CSSFirstPage() {
   return (
@@ -19,4 +19,4 @@ export default function CSSFirstPage() {
       <Footer />
     </>
   );
-} 
+}

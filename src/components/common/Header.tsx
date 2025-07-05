@@ -1,20 +1,18 @@
 "use client";
 
 import { Menu as MenuIcon } from "@mui/icons-material";
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import React from "react";
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -31,6 +29,7 @@ export const Header: React.FC = () => {
     { label: "CSS First", href: "/css-first" },
     { label: "Dynamic Rendering", href: "/dynamic-rendering" },
     { label: "useMediaQuery", href: "/use-media-query" },
+    { label: "Middleware Hybrid", href: "/middleware-hybrid" },
   ];
 
   return (
@@ -43,7 +42,13 @@ export const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
           {menuItems.map((item) => (
-            <Button key={item.label} color="inherit" sx={{ ml: 2 }} component={Link} href={item.href}>
+            <Button
+              key={item.label}
+              color="inherit"
+              sx={{ ml: 2 }}
+              component={Link}
+              href={item.href}
+            >
               {item.label}
             </Button>
           ))}
